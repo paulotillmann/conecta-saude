@@ -436,7 +436,7 @@ const App: React.FC = () => {
                     <img 
                       src="/img/logo-conectasaude-fundobranco-transparente.png" 
                       alt="Conecta Saúde Logo" 
-                      className="h-[84px] object-contain"
+                      className="h-[90px] object-contain"
                     />
                     <div className="space-y-1 px-10">
                       <h2 className="text-[19px] font-extrabold text-[#231918] tracking-tight">
@@ -510,8 +510,8 @@ const App: React.FC = () => {
                           animate={{ opacity: 1, height: 'auto' }}
                           className="space-y-2 overflow-hidden"
                         >
-                          <label htmlFor="code-input" className="text-xs font-bold text-[#231918] uppercase tracking-wide">
-                            Código de acesso
+                          <label htmlFor="code-input" className="text-xs font-bold text-[#231918] tracking-wide">
+                            Código de Acesso
                           </label>
                           <div className="relative">
                             <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-[#564240]/50">
