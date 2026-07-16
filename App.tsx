@@ -420,7 +420,9 @@ const App: React.FC = () => {
                     >
                       <ChevronLeft className="h-5 w-5 text-[#231918]" />
                     </button>
-                    <h3 className="text-base font-bold text-[#231918] tracking-tight">Entrar</h3>
+                    <h3 className="text-sm font-extrabold tracking-[0.15em] uppercase bg-gradient-to-r from-[#3f0003] to-[#601010] bg-clip-text text-transparent">
+                      Entrar
+                    </h3>
                     <div className="w-10" /> {/* Spacer */}
                   </div>
 
