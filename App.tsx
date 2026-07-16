@@ -123,7 +123,7 @@ const App: React.FC = () => {
   const handleRequestAccess = () => {
     const rawCpf = cpf.replace(/\D/g, '');
     if (rawCpf.length !== 11) {
-      setLoginError('Por favor, informe um CPF válido.');
+      setLoginError('Por favor, informe um CPF válido para solicitar o acesso.');
       return;
     }
     
@@ -315,7 +315,7 @@ const App: React.FC = () => {
                   <div className="absolute top-6 right-6 z-20">
                     <button 
                       onClick={() => setCurrentScreen('login')}
-                      className="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-white bg-black/30 hover:bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full transition-all"
+                      className="text-xs font-semibold uppercase tracking-wider text-white/90 hover:text-white bg-black/30 hover:bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full transition-all shadow-sm"
                     >
                       Pular
                     </button>
@@ -476,12 +476,8 @@ const App: React.FC = () => {
                           <button
                             type="button"
                             onClick={handleRequestAccess}
-                            disabled={isCheckingData || cpf.replace(/\D/g, '').length !== 11}
-                            className={`w-full py-4 font-semibold text-sm rounded-[24px] transition-all flex items-center justify-center space-x-1.5 ${
-                              cpf.replace(/\D/g, '').length === 11 && !isCheckingData
-                                ? 'bg-[#601010] text-white hover:bg-[#4d0c0c] shadow-[0_8px_20px_rgba(96,16,16,0.15)] active:scale-[0.99] cursor-pointer'
-                                : 'bg-slate-100 text-slate-400 border border-slate-200/50 pointer-events-none'
-                            }`}
+                            disabled={isCheckingData}
+                            className="w-full py-4 font-semibold text-sm rounded-[24px] transition-all flex items-center justify-center space-x-1.5 bg-[#601010] text-white hover:bg-[#4d0c0c] shadow-[0_8px_20px_rgba(96,16,16,0.15)] active:scale-[0.99] cursor-pointer disabled:bg-slate-100 disabled:text-slate-400 disabled:border-slate-200/50 disabled:shadow-none disabled:pointer-events-none"
                           >
                             {isCheckingData ? (
                               <>
@@ -640,7 +636,7 @@ const App: React.FC = () => {
                         ).length} Médicos Encontrados
                       </span>
                       <button 
-                        className="h-9 w-9 flex items-center justify-center rounded-lg border border-[#dcc0bd] bg-white text-[#564240]"
+                        className="h-9 w-9 flex items-center justify-center rounded-lg border border-[#dcc0bd] bg-white text-[#564240] shadow-sm hover:bg-slate-50 transition-colors"
                         aria-label="Filtros avançados"
                       >
                         <SlidersHorizontal className="h-4 w-4" />
@@ -655,9 +651,9 @@ const App: React.FC = () => {
                           <button
                             key={specialty}
                             onClick={() => setSelectedSpecialty(specialty === 'Todos' ? null : specialty)}
-                            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all ${
+                            className={`px-4 py-2 rounded-full text-xs font-semibold whitespace-nowrap transition-all shadow-sm ${
                               isSelected 
-                                ? 'bg-[#601010] text-white shadow-sm' 
+                                ? 'bg-[#601010] text-white' 
                                 : 'bg-white border border-[#dcc0bd]/50 text-[#564240] hover:bg-slate-50'
                             }`}
                           >
@@ -737,11 +733,11 @@ const App: React.FC = () => {
                                       key={day.dayNum}
                                       disabled={!day.available}
                                       onClick={() => setSelectedDays(prev => ({ ...prev, [doctor.id]: day.dayNum }))}
-                                      className={`flex flex-col items-center justify-center min-w-[42px] h-14 rounded-xl border text-center transition-all ${
+                                      className={`flex flex-col items-center justify-center min-w-[42px] h-14 rounded-xl border text-center transition-all shadow-sm ${
                                         !day.available 
-                                          ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed'
+                                          ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed shadow-none'
                                           : isSelected
-                                            ? 'bg-[#601010] border-[#601010] text-white shadow-sm'
+                                            ? 'bg-[#601010] border-[#601010] text-white'
                                             : 'bg-white border-[#dcc0bd]/40 text-[#564240] hover:bg-slate-50'
                                       }`}
                                     >
