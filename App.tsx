@@ -412,17 +412,23 @@ const App: React.FC = () => {
                   className="flex-1 flex flex-col bg-white w-full h-full relative px-6 py-6"
                 >
                   {/* Cabeçalho */}
-                  <div className="flex items-center space-x-3 w-full mb-6">
-                    <button 
-                      onClick={() => setCurrentScreen('onboarding')}
-                      className="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-[#dcc0bd]/40 hover:bg-slate-50 transition-colors shadow-sm shrink-0"
-                      aria-label="Voltar para Onboarding"
-                    >
-                      <ChevronLeft className="h-5 w-5 text-[#231918]" />
-                    </button>
-                    <h3 className="text-[24px] font-bold tracking-tight text-[#231918]">
-                      Entrar
-                    </h3>
+                  <div className="flex flex-col w-full mb-6">
+                    {/* Botão de Voltar */}
+                    <div className="flex justify-start w-full">
+                      <button 
+                        onClick={() => setCurrentScreen('onboarding')}
+                        className="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-[#dcc0bd]/40 hover:bg-slate-50 transition-colors shadow-sm"
+                        aria-label="Voltar para Onboarding"
+                      >
+                        <ChevronLeft className="h-5 w-5 text-[#231918]" />
+                      </button>
+                    </div>
+                    {/* Título Centralizado na Linha de Baixo */}
+                    <div className="flex justify-center w-full mt-3">
+                      <h3 className="text-[29px] font-bold tracking-tight text-[#231918] text-center">
+                        Entrar
+                      </h3>
+                    </div>
                   </div>
 
                   {/* Logo & Boas-vindas */}
