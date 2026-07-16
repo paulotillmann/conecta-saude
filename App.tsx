@@ -425,7 +425,7 @@ const App: React.FC = () => {
                     </div>
                     {/* Título Centralizado na Linha de Baixo */}
                     <div className="flex justify-center w-full mt-3">
-                      <h3 className="text-[29px] font-bold tracking-tight text-[#231918] text-center">
+                      <h3 className="text-[35px] font-bold tracking-tight text-[#231918] text-center">
                         Entrar
                       </h3>
                     </div>
@@ -436,10 +436,10 @@ const App: React.FC = () => {
                     <img 
                       src="/img/logo-conectasaude-fundobranco-transparente.png" 
                       alt="Conecta Saúde Logo" 
-                      className="h-20 object-contain"
+                      className="h-[84px] object-contain"
                     />
                     <div className="space-y-1 px-10">
-                      <h2 className="text-2xl font-extrabold text-[#231918] tracking-tight">
+                      <h2 className="text-[19px] font-extrabold text-[#231918] tracking-tight">
                         Bem-vindo de volta
                       </h2>
                     </div>
@@ -451,7 +451,7 @@ const App: React.FC = () => {
                       
                       {/* Campo CPF */}
                       <div className="space-y-2">
-                        <label htmlFor="cpf-input" className="text-xs font-bold text-[#231918] uppercase tracking-wide">
+                        <label htmlFor="cpf-input" className="text-xs font-bold text-[#231918] tracking-wide">
                           Informe seu CPF
                         </label>
                         <div className="relative">
